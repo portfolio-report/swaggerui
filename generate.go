@@ -1,6 +1,7 @@
 // This program downloads the dist assets for the current swagger-ui version and places them into the embed directory
 // TODO: Compress?
 
+//go:build ignore
 // +build ignore
 
 package main
@@ -110,7 +111,7 @@ func main() {
 	newidx := strings.Replace(
 		string(idxFile),
 		`url: "https://petstore.swagger.io/v2/swagger.json"`,
-		`url: "./swagger_spec"`,
+		`url: "./openapi.json"`,
 		-1,
 	)
 	newidxFile, err := os.Create(filepath.Join("embed", "index.html"))
